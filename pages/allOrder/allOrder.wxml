@@ -1,0 +1,47 @@
+<scroll-view scroll-y="true">
+    <view class="container">
+        <!-- 搜索框 -->
+        <view class="search-box">
+            <van-search
+                    value="{{searchQuery}}"
+                    input-align="center"
+                    placeholder="搜索订单编号"
+                    shape="round"
+                    bind:search="onSearchInput"
+                    bind:clear="onClear"
+            />
+        </view>
+
+        <!-- 订单列表 -->
+        <view class="order-list">
+            <view class="order-title">全部订单</view>
+
+            <!-- 如果没有匹配的订单，则显示 van-empty -->
+            <van-empty wx:if="{{filteredOrders.length === 0}}" description="没有找到相关订单" />
+
+            <!-- 否则显示订单 -->
+            <view class="order-info" wx:else>
+                <view class="info-item" wx:for="{{filteredOrders}}" wx:key="order">
+                    <view class="info-title">订单信息</view>
+                    <view class="order-content">
+                        <text>订单编号: {{item.orderNumber}}</text>
+                        <text>服务名称: {{item.serveName}}</text>
+                        <text>用户电话: {{item.userPhone}}</text>
+                        <text>预约金额: {{item.amount}}</text>
+                        <text>预约时间: {{item.date}}</text>
+
+                        <!-- 额外费用 -->
+                        <text>额外费用: {{item.additionalCost === 0 ? '0' : item.additionalCost}}</text>
+
+                        <!-- 状态标签 -->
+                        <view class="order-status-tag">
+                            <text class="{{item.status === 'completed' ? 'completed' : 'not-completed'}}">
+                                {{item.status === 'completed' ? '已完成' : '未完成'}}
+                            </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

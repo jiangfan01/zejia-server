@@ -1,0 +1,91 @@
+<scroll-view scroll-y="true">
+    <view class="container">
+        <!-- 头部位置和用户信息 -->
+        <view class="header">
+            <view class="location-box">
+                <text class="location-title">我的位置</text>
+                <view class="location-text">
+                    <van-icon name="location-o" size="20"/>
+                    <view class="location" wx:if="{{location || address}}">{{ location || address }}</view>
+                    <view class="location" wx:else>定位中</view>
+                </view>
+
+            </view>
+            <view class="user-info">
+                <view class="user-name">蒋师傅</view>
+                <view class="status-icon">
+                    <text class="status-text">{{ checked ? '营业' : '歇业' }}</text>
+                    <van-switch checked="{{ checked }}" bind:change="onChange" size="24"
+                                active-color="#67c1b5"></van-switch>
+                </view>
+
+            </view>
+        </view>
+        <!-- 订单状态部分 -->
+        <view class="orders-section">
+            <view class="order-status">
+                <view class="status-item" bindtap="checkPayment">
+                    <van-icon name="gold-coin-o" size="32"/>
+                    <text>结算订单</text>
+                </view>
+                <view class="status-item" bindtap="viewAllOrders">
+                    <van-icon name="coupon-o" size="32"/>
+                    <text>全部订单</text>
+                </view>
+                <view class="status-item" bindtap="viewCompletedOrders">
+                    <van-icon name="completed-o" size="32"/>
+                    <text>已完成</text>
+                </view>
+                <!--                <view class="status-item" bindtap="viewAfterSales">-->
+                <!--                    <van-icon name="label-o" size="32"/>-->
+                <!--                    <text>我的售后</text>-->
+                <!--                </view>-->
+            </view>
+        </view>
+        <!-- 订单列表 -->
+        <view class="order-list">
+            <view class="order-title">最新订单</view>
+            <view class="order-info">
+                <view class="info-item" wx:for="{{filteredOrders}}" wx:key="order">
+                    <view class="info-title">订单信息</view>
+                    <view class="order-content">
+                        <text>订单编号: {{item.orderNumber}}</text>
+                        <text>服务名称: {{item.serveName}}</text>
+                        <text>用户电话: {{item.userPhone}}</text>
+                        <text>预约金额: ￥{{item.amount}}</text>
+                        <text>预约时间: {{item.date}}</text>
+
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 弹窗 -->
+        <van-popup show="{{ show }}" position="bottom" bind:close="onClose" custom-style="height: 70%;">
+            <view class="pop-title">请选择订单</view>
+            <van-search
+                    value="{{ searchQuery }}"
+                    input-align="center"
+                    placeholder="搜索用户手机号"
+                    shape="round"
+                    bind:search="onSearchInput"
+                    bind:clear="onClear"
+            />
+            <view class="order-info">
+                <view class="info-item" wx:for="{{filteredOrders}}" wx:key="order" bindtap="selectOrder">
+                    <view class="info-title">订单信息</view>
+                    <view class="order-content">
+                        <text>订单编号: {{item.orderNumber}}</text>
+                        <text>服务名称: {{item.serveName}}</text>
+                        <text>用户电话: {{item.userPhone}}</text>
+                        <text>预约金额: ￥{{item.amount}}</text>
+                        <text>预约时间: {{item.date}}</text>
+                        <text class="status-text">
+                            未完成
+                        </text>
+                    </view>
+                </view>
+            </view>
+        </van-popup>
+
+    </view>
+</scroll-view>

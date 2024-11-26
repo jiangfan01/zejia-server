@@ -1,0 +1,176 @@
+/* 整体用户页面 */
+.user-page {
+    background-color: #f5f5f5;
+    padding: 20rpx;
+}
+
+/* 用户信息部分 */
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40rpx 20rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20rpx;
+}
+
+/* 头像样式 */
+.avatar {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+}
+
+/* 用户电话样式 */
+.phone {
+    font-size: 32rpx;
+    color: #333;
+    font-weight: bold;
+    margin-top: 12rpx;
+}
+
+/* 余额部分 */
+.user-balance {
+    display: flex;
+    justify-content: center;
+    gap: 30rpx;
+    background: white;
+    padding: 24rpx 0;
+    border-radius: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+/* 余额项 */
+.balance-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 余额数字 */
+.balance-num {
+    color: #67c1b5;
+    font-weight: bold;
+    font-size: 36rpx;
+}
+
+/* 余额标题 */
+.balance-title {
+    font-size: 26rpx;
+    color: #999;
+}
+
+/* 操作按钮部分 */
+.action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20rpx;
+}
+
+/* 按钮宽度 */
+.button {
+    width: 300rpx;
+}
+
+/* 默认头像按钮 */
+.default-avatar {
+    background: #f8f8f8;
+    width: 100rpx;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0;
+}
+
+/* 按钮去除默认样式 */
+button {
+    margin: 0;
+    padding: 0;
+    background-color: inherit;
+    position: static;
+}
+
+button::after {
+    content: none;
+}
+
+button:after {
+    border: none;
+}
+
+/* 设置部分样式 */
+.settings-section {
+    margin-top: 30rpx;
+    background-color: #fff;
+    padding: 20rpx;
+    border-radius: 20rpx;
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20rpx 0;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.button {
+    width: 360rpx;
+}
+
+.settings-item:nth-child(1) {
+    margin-top: 20px;
+}
+
+.settings-item:last-child {
+    border-bottom: none;
+}
+
+.settings-item image {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 20rpx;
+}
+
+.settings-item text {
+    font-size: 32rpx;
+    color: #333;
+}
+
+/* 弹窗内容样式 */
+.popup-content {
+    padding: 20rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+/* 弹窗标题 */
+.popup-title {
+    font-size: 34rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+    text-align: center;
+}
+
+
+.submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.popup-input-title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 14px;
+}

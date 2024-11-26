@@ -1,0 +1,96 @@
+<view class="user-page">
+    <!-- 用户信息部分 -->
+    <view class="user-info">
+        <block wx:if="{{avatarUrl}}">
+
+            <image src="{{avatarUrl}}" mode="aspectFill" class="avatar"></image>
+
+            <text class="phone">{{phoneNumber}}</text>
+
+        </block>
+        <block wx:else>
+            <button class="default-avatar" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+                <van-icon name="friends-o" size="38"/>
+            </button>
+            <text class="phone">点击登录</text>
+        </block>
+    </view>
+
+    <!-- 用户余额部分 -->
+    <view class="user-balance">
+        <view class="balance-item">
+            <text class="balance-num">{{balance}}</text>
+            <text class="balance-title">余额</text>
+        </view>
+        <view class="balance-item">
+            <text class="balance-num">{{totalBalance}}</text>
+            <text class="balance-title">累计</text>
+        </view>
+    </view>
+
+    <van-popup
+            show="{{ show }}"
+            closeable
+            position="bottom"
+            custom-style="height: 50%"
+            bind:close="onClose"
+            round
+    >
+        <view class="popup-content">
+            <!-- 标题 -->
+            <view class="popup-title">请输入提现金额</view>
+
+            <!-- 提现金额输入框 -->
+            <view class="popup-input">
+                <van-cell-group>
+                    <van-field
+                            value="{{ amount }}"
+                            label="提现"
+                            placeholder="请输入金额"
+                            input-align="left"
+                            type="text"
+                            bindinput="onAmountInput"
+                    />
+                </van-cell-group>
+            </view>
+
+            <!-- 提现方式 -->
+            <view class="popup-input">
+                <view class="popup-input-title">
+                    <text>提现方式</text>
+                    <radio
+                            checked="true"
+                            color="#67c1b5"
+                    >
+                        微信零钱
+                    </radio>
+                </view>
+            </view>
+
+
+            <!-- 确认提现按钮 -->
+            <view class="submit">
+                <van-button
+                        round
+                        color="#67c1b5"
+                        custom-class="button"
+                        bindtap="submitWithdrawal"
+                >
+                    确认提现
+                </van-button>
+            </view>
+        </view>
+    </van-popup>
+
+
+    <!-- 操作按钮 -->
+    <view class="action">
+        <view class="action-item">
+            <van-button round custom-class="button" color="#67c1b5" bindtap="showPopup">提现
+            </van-button>
+        </view>
+        <view class="action-item">
+            <van-button plain round custom-class="button">退出登录</van-button>
+        </view>
+    </view>
+</view>

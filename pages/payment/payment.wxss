@@ -1,0 +1,61 @@
+.container {
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  text-align: center;
+  color: #333;
+}
+
+.label {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 10rpx;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+  border: 1px solid #ddd;
+  border-radius: 8rpx;
+}
+
+.textarea {
+  height: 120rpx;
+}
+
+.extra-fee-section, .amount-section, .total-fee-section {
+  margin-top: 20rpx;
+}
+
+.total-fee-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx;
+  background: #f7f8fa;
+  border-radius: 8rpx;
+  margin-top: 30rpx;
+}
+
+.total {
+  font-size: 30rpx;
+  color: #67c1b5;
+  font-weight: bold;
+}
+
+.confirm-btn {
+  width: 100%;
+  padding: 15rpx;
+  margin-top: 30rpx;
+  background-color: #67c1b5;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 8rpx;
+  text-align: center;
+}

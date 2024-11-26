@@ -1,0 +1,33 @@
+<view class="container">
+    <!-- 费用结算标题 -->
+    <view class="title">费用结算</view>
+
+    <!-- 费用输入区域 -->
+
+    <!-- 额外费用选择 -->
+    <view class="extra-fee-section">
+        <text class="label">是否产生额外费用:</text>
+        <switch checked="{{hasExtraFee}}" bindchange="toggleExtraFee" color="#67c1b5"/>
+    </view>
+
+    <!-- 额外费用输入区域 -->
+    <view wx:if="{{hasExtraFee}}">
+        <view class="amount-section">
+            <text class="label">额外费用:</text>
+            <input type="number" class="input" placeholder="请输入额外费用" bindinput="onExtraFeeInput" />
+        </view>
+        <view class="amount-section">
+            <text class="label">备注:</text>
+            <textarea class="textarea" placeholder="请描述额外费用，如主板更换" bindinput="onRemarksInput"></textarea>
+        </view>
+    </view>
+
+    <!-- 总费用展示 -->
+    <view class="total-fee-section">
+        <text class="label">总费用:</text>
+        <text class="total">{{totalFee}} 元</text>
+    </view>
+
+    <!-- 确认按钮 -->
+    <button class="confirm-btn" bindtap="submitOrder">确认结算</button>
+</view>

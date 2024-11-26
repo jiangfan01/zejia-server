@@ -1,0 +1,76 @@
+.container {
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-box {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-list {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.order-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.order-info {
+    border-top: 1px solid #e0e0e0;
+}
+
+.info-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-content text {
+    font-size: 16px;
+    color: #555;
+}
+
+.order-content text:nth-child(6) {
+    font-size: 14px;
+    color: #ff5555;  /* 红色，突出显示 */
+    margin-top: 5px;
+}
+
+.order-status-tag {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.order-status-tag .completed {
+    color: #67c1b5;
+}
+
+.order-status-tag .not-completed {
+    color: #f7a300;
+}
+
+.van-empty__description {
+    font-size: 16px;
+    color: #999;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "费用结算",
+  "usingComponents": {
+    "van-switch": "/miniprogram_npm/@vant/weapp/switch/index"
+  }
+}
